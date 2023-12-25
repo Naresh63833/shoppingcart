@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <link rel="icon" href="images/fast-food-outline.png">
+    <link rel="stylesheet" href="style.css">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+</head>
+<body id="body">
+    <!-- <div class="video">
+        <video src="images/food.mp4" autoplay muted loop></video>
+    </div> -->
+    <header>
+        <div class="nav">
+            <a href="#" class="logo">
+                <ion-icon name="fast-food-outline"></ion-icon>
+                Food Delight
+            </a>
+
+            <!-- Cart -->
+            <div class="box">
+                <div class="cart-count">0</div>
+                <ion-icon name="cart-outline" id="cart-icon"></ion-icon>
+            </div>
+            <div class="cart">
+                <div class="cart-title">Cart Items</div>
+                <div class="cart-content">
+                    <!-- <div class="cart-box">
+                        <img src="images/plain.jpg" class="cart-img">
+                        <div class="detail-box">
+                            <div class="cart-food-title">Special Dosai</div>
+                            <div class="price-box">
+                                <div class="cart-price">Rs.72</div>
+                                <div class="cart-amt">Rs.72</div>
+                            </div>
+                            <input type="number" value="1" class="cart-quantity">
+                        </div>
+                        <ion-icon name="trash-outline" class="cart-remove"></ion-icon>
+                    </div>
+
+                    <div class="cart-box">
+                        <img src="images/plain.jpg" class="cart-img">
+                        <div class="detail-box">
+                            <div class="cart-food-title">Special Dosai</div>
+                            <div class="price-box">
+                                <div class="cart-price">Rs.72</div>
+                                <div class="cart-amt">Rs.72</div>
+                            </div>
+                            <input type="number" value="1" class="cart-quantity">
+                        </div>
+                        <ion-icon name="trash-outline" class="cart-remove"></ion-icon>
+                    </div> -->
+                </div>
+                <div class="total">
+                    <div class="total-title">Total</div>
+                    <div class="total-price">Rs.0</div>
+                </div>
+                <button class="btn-buy">Place Order</button>
+                <ion-icon name="close-outline" id="cart-close"></ion-icon>
+            </div>
+
+        </div>
+    </header>
+    <div class="container">
+        <h2 class="title">Discover the best food</h2>
+        <div class="shop-content">
+            <div class="food-box">
+                <div class="pic">
+                        <img src="images/plain.jpg" class="food-img">
+                </div>
+                <div class="food-title">Plain</div>
+                <span class="food-price">Rs.40</span>
+                <ion-icon name="cart-outline" class="add-cart"></ion-icon>
+            </div>
+            <div class="food-box">
+                <div class="pic">
+                        <img src="images/Paper Roast.jpg" class="food-img">
+                </div>
+                <div class="food-title">Paper Roast</div>
+                <span class="food-price">Rs.65</span>
+                <ion-icon name="cart-outline" class="add-cart"></ion-icon>
+            </div>
+            <div class="food-box">
+                <div class="pic">
+                        <img src="images/Onion Roast.jpg" class="food-img">
+                </div>
+                <div class="food-title">Onion Roast</div>
+                <span class="food-price">Rs.80</span>
+                <ion-icon name="cart-outline" class="add-cart"></ion-icon>
+            </div>
+            <div class="food-box">
+                <div class="pic">
+                        <img src="images/Egg Parotta.jpg" class="food-img">
+                </div>
+                <div class="food-title">Egg Parotta</div>
+                <span class="food-price">Rs.55</span>
+                <ion-icon name="cart-outline" class="add-cart"></ion-icon>
+            </div>
+            <div class="food-box">
+                <div class="pic">
+                        <img src="images/Plain Omelette.jpg" class="food-img">
+                </div>
+                <div class="food-title">Plain Omelette</div>
+                <span class="food-price">Rs.25</span>
+                <ion-icon name="cart-outline" class="add-cart"></ion-icon>
+            </div>
+            <div class="food-box">
+                <div class="pic">
+                        <img src="images/Kadai Fry.jpg" class="food-img">
+                </div>
+                <div class="food-title">Kadai Fry</div>
+                <span class="food-price">Rs.150</span>
+                <ion-icon name="cart-outline" class="add-cart"></ion-icon>
+            </div>
+            <div class="food-box">
+                <div class="pic">
+                        <img src="images/Egg Veechu.jpg" class="food-img">
+                </div>
+                <div class="food-title">Egg Veechu</div>
+                <span class="food-price">Rs.65</span>
+                <ion-icon name="cart-outline" class="add-cart"></ion-icon>
+            </div>
+            <div class="food-box">
+                <div class="pic">
+                        <img src="images/Egg Roast.jpg" class="food-img">
+                </div>
+                <div class="food-title">Egg Roast</div>
+                <span class="food-price">Rs.65</span>
+                <ion-icon name="cart-outline" class="add-cart"></ion-icon>
+            </div>
+        </div>
+
+        <!--Cart Remove Confirmation Box --> 
+        <div id="confirmationBox" class="hidden">
+            <div id="confirmation-content">
+                <p>Are you want to remove item in cart ?</p>
+                <div class="yesornoBtns">
+                    <button id="confirmButton">Yes</button>
+                    <button id="cancelButton">No</button>
+                </div>
+            </div>
+        </div>
+        <!--Cart remove item Pop up Box -->
+        <div class="hiddenpop" id="popupbox">
+            <div id="popupcontent">
+                <p>Item Removed</p>
+                <button id="popbtn">Ok</button>
+            </div>
+        </div>
+        <!--Products already added Pop up Box -->
+        <div class="hiddenpoppro" id="popupprobox">
+            <div id="popupprocontent">
+                <p>Product already added in cart</p>
+                <button id="popprobtn">Ok</button>
+            </div>
+        </div>
+
+        <!-- Address pop up -->
+        
+        <div class="hiddenaddress" id="addresspopupbox">
+            <div class="addresscontent">
+                <h2>Add Delivery Details</h2>
+                <table>
+                    <tr>
+                        <td>Name</td>
+                        <td><input type="text" id="name"></td>
+                    </tr>
+                    <tr>
+                        <td>Phone No</td>
+                        <td><input type="text" id="phone"></td>
+                    </tr>
+                    <tr>
+                        <td>Address</td>
+                        <td><input id="address" type="text"></td>
+                    </tr>
+                    <tr>
+                        <td>Pincode</td>
+                        <td><input type="number" id="pin"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><button id="comfirmOrder">Confirm Order</button></td>
+                    </tr>
+                </table>
+                <ion-icon name="close-outline" id="address-close"></ion-icon>
+            </div>
+        </div>
+
+        <!-- Order Confirm Box -->
+        <div class="hiddenConfirmOrder" id="thankUpopupbox">
+            <div class="confirmOrdercontent">
+                <h2>Your Order has been Confirmed</h2>
+                <div class="addressDetails">
+                    <h3>Your Delivery Details</h3>
+                    <p id="Address"></p>
+                </div>
+                <h4 id="orderTotal"></h4>
+                <h3>Thank You For Choosing Food Delight...</h3>
+                <button id="okBtn">OK</button>
+            </div>
+        </div>
+            
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

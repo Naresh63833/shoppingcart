@@ -1,0 +1,526 @@
+*{
+    font-family: 'Poppins',sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #4b4b4b;
+    /* position: relative; */
+    /* background-image: url("images/back.gif");
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover; */
+}
+/* .video{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    top: 0;
+    margin-bottom: 0;
+}
+.video video{
+    width: 100%;
+    height: 100%;
+    top: 0;
+} */
+header{
+    position: fixed;
+    background: linear-gradient(to right,#ff4757,#fd804e);
+    /* background-color: #12343b; */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 99;
+}
+.nav{
+    max-width: 1000px;
+    margin: auto;
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo{
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #fff;
+}
+/* Cart logo and count */
+.box{
+    color: #fff;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    position: relative;
+}
+.cart-count{
+    position: absolute;
+    background-color: #2f3542;
+    top: -5px;
+    right: 0;
+    padding: 3px;
+    height: 20px;
+    width: 20px;
+    line-height: 20px;
+    border-radius: 50%;
+    z-index: 99;
+}
+#cart-icon{
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding-top: 10px;
+}
+img{
+    width: 100%;
+}
+.container{
+    max-width: 1200px;
+    margin: auto;
+    padding: 4rem;
+    width: 100%;
+}
+h2.title{
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+    color: #fff;
+}
+.shop-content{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(220px,auto));
+    gap: 1.5rem;
+    justify-content: center;
+    align-items: center;
+}
+.food-box{
+    background-color: #fff;
+    padding: 10px;
+    box-shadow: 0 1px 4px rgba(40,37,37,0.1);
+    border-radius: 3px;
+    position: relative;
+}
+.pic{
+    overflow: hidden;
+}
+.pic:hover img{
+    transform: scale(1.5);
+}
+.food-img{
+    transition: 0.5s;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+}
+.food-title{
+    font-size: 1rem;
+    font-weight: 600;
+    color: #ff6348;
+}
+.food-price{
+    font-weight: 500;
+}
+.add-cart{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-color: #2ed573;
+    color: #fff;
+    padding: 10px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: 0.5s;
+}
+.add-cart:hover{
+    background-color: rgba(255, 0, 0, 0.786);
+}
+/* Cart */
+.cart{
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 400px;
+    height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 1px 4px rgba(40, 37, 37, 0.1);
+    z-index: 100;
+}
+.cart-active{
+    right: 0;
+    transition: 0.5s;
+}
+.cart-title{
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding-bottom: 20px;
+}
+.cart-box{
+    display: grid;
+    grid-template-columns: 32% 50% 18%;
+    gap: 1rem;
+    align-items: center;
+    margin-top: 1rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding-bottom: 10px;
+}
+.cart-img{
+    width: 75px;
+    height: 75px;
+    object-fit: cover;
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    padding: 5px;
+}
+.detail-box{
+    display: grid;
+    row-gap: 0.5rem;
+}
+.price-box{
+    display: flex;
+    justify-content: space-between;
+}
+.cart-food-title{
+    font-size: 1rem;
+    text-transform: uppercase;
+    color: #ff6348;
+    font-weight: 500;
+}
+.cart-price{
+    font-weight: 500;
+}
+.cart-quantity{
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    outline: none;
+    width: 2.4rem;text-align: center;
+    font-size: 1rem;
+}
+.cart-remove{
+    font-size: 24px;
+    color: red;
+    cursor: pointer;
+}
+.total{
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 1.5rem;
+}
+.total-title{
+    font-size: 1rem;
+    font-weight: 600;
+}
+.total-price{
+    margin-left: 0.5rem;
+}
+.btn-buy{
+    background-color: #2f3542;
+    color: #fff;
+    padding: 12px 20px;
+    border: none;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    border-radius: 5px;
+}
+#cart-close{
+    position: absolute;
+    top: 1rem;
+    right: 0.8rem;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+
+/*cart Confirmation box */
+.hidden{
+    display: none;
+}
+#confirmationBox{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 4px 6px 15px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    border: 1px solid gray;
+    border-radius: 5px;
+}
+.confirmation-content{
+    text-align: center;
+}
+#confirmationBox p{
+    font-weight: 600;
+}
+.yesornoBtns{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+}
+#confirmButton{
+    background-color: #2ed573;
+    border: none;
+    padding: 10px 20px;
+    margin:10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+#confirmButton:hover,#cancelButton:hover{
+    color: #fff;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+}
+#cancelButton{
+    background-color: #ff4757;
+    border: none;
+    padding: 10px 20px;
+    margin:10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+/* cart Popup box */
+
+.hiddenpop{
+    display: none;
+}
+#popupbox{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: #ff4757;
+    padding: 20px;
+    box-shadow: 4px 6px 15px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    border: 1px solid gray;
+    text-align: center;
+    border-radius: 5px;
+}
+.popup-content{
+    text-align: center;
+}
+#popupbox p{
+    font-weight: 600;
+    color: #fff;
+}
+#popbtn{
+    margin-top: 10px;
+    padding: 5px 10px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    background-color: #4c4e4f;
+    color: #fff;
+}
+#popbtn:hover{
+    background-color: #b6e8ba;
+    color: #252424;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* products already added Popup box */
+
+.hiddenpoppro{
+    display: none;
+}
+#popupprobox{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: #4cff5b;
+    padding: 20px;
+    box-shadow: 4px 6px 15px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    border: 1px solid gray;
+    text-align: center;
+    border-radius: 5px;
+}
+.popupprocontent{
+    text-align: center;
+}
+#popupprobox p{
+    font-weight: 600;
+    color: #fff;
+}
+#popprobtn{
+    margin-top: 10px;
+    padding: 5px 10px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    background-color: #4c4e4f;
+    color: #fff;
+}
+#popprobtn:hover{
+    background-color: #ff4757;
+    color: #252424;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+}
+/* Address popup */
+
+.hiddenaddress{
+    display: none;
+}
+#addresspopupbox{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: #fd804e;
+    padding: 20px;
+    box-shadow: 4px 6px 15px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    border: 1px solid gray;
+    text-align: center;
+    border-radius: 5px;
+    line-height: .9cm;
+    width: 300px;
+    overflow: hidden;
+}
+#addresspopupbox h2{
+    text-align: center;
+    font-size: 20px;
+    font-weight: 600;
+}
+#addresspopupbox tr{
+    text-align: left;
+}
+#addresspopupbox tr td{
+    font-size: 16px;
+}
+#addresspopupbox tr td input{
+    outline: none;
+    border: none;
+    height: 22px;
+    border-radius: 5px;
+    padding: 5px;
+}
+#addresspopupbox tr td textarea{
+    outline: none;
+    border: none;
+    min-height: 70px;
+    border-radius: 5px;
+    max-width: 172px;
+    min-width: 172px;
+    max-height: 70px;
+}
+#addresspopupbox button{
+    width: 100%;
+    margin-top: 20px;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    padding: 5px;
+    background:linear-gradient(to right,#2ed573,#939090);
+    color: white;
+    cursor: pointer;
+}
+#addresspopupbox button:hover{
+    background:linear-gradient(to right,#939090,#2ed573);
+    box-shadow: 2px 3px 10px rgba(0, 0, 0, 0.3);
+}
+#address-close{
+    position: absolute;
+    top: .2rem;
+    right: 0.4rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* Thank You confirm box */
+.hiddenConfirmOrder{
+    display: none;
+}
+#thankUpopupbox{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background: linear-gradient(to right, #2ed573,gray);
+    padding: 20px;
+    box-shadow: 4px 6px 15px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    border: 1px solid gray;
+    border-radius: 5px;
+    line-height: .8cm;
+    width: 300px;
+}
+.confirmOrdercontent{
+   max-width: 250px;
+}
+.confirmOrdercontent h2{
+    color: #ffd8c9;
+    font-size: 20px;
+    text-align: center;
+}
+.addressDetails{
+    padding: 20px;
+    text-align: center;
+}
+.confirmOrdercontent .addressDetails h3{
+    color: #ffd8c9;
+    font-size: 15px;
+}
+.addressDetails p{
+    color: #fff;
+    font-size: 15px;
+    text-align: start;
+    line-height: .6cm;
+    display: flex;
+}
+.confirmOrdercontent h3{
+    text-align: center;
+    line-height: .5cm;
+    font-size: 13px;
+    color: rgb(20, 20, 20);
+}
+.confirmOrdercontent h4{
+    text-align: center;
+    line-height: .5cm;
+    font-size: 13px;
+    color: rgb(168, 124, 14);
+    background-color: #b6e8ba;
+    margin: 5px;
+    border-radius: 5px;
+    padding: 5px;
+    
+}
+.confirmOrdercontent button{
+    display: flex;
+    margin: 10px auto;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    box-shadow: 2px 3px 10px rgba(0, 0, 0, 0.3);
+}
+.confirmOrdercontent button:hover{
+    box-shadow: 3px 4px 12px rgba(0, 0, 0, 0.3);
+    background-color: #ff4757;
+    color: white;
+}
+
+@media (max-width:477px) {
+    .cart {
+        width: 250px;
+    }
+}
+@media (max-width:1090px) {
+    
+    body{
+        background-color: #4b4b4b;
+    }
+    .video{
+       display: none;
+    }
+}
